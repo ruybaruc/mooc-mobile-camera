@@ -33,12 +33,14 @@ var app = {
 
   cargarFoto: function(pictureSourceType){
     var opciones = {
-      quality: 50,
+      quality: 100,
       sourceType: pictureSourceType,
       destinationType: Camera.DestinationType.FILE_URI,
       targetWidth: 300,
       targetHeight: 300,
-      correctOrientation: true
+      correctOrientation: true,
+      cameraDirection: Camera.Direction.FRONT,
+      saveToPhotoAlbum: true
     };
     navigator.camera.getPicture(app.fotoCargada, app.errorAlCargarFoto, opciones);
   },
